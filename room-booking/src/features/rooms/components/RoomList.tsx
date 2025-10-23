@@ -7,7 +7,7 @@ export interface RoomListProps {
 }
 
 export const RoomList: FC<RoomListProps> = ({ display }) => {
-  const [rooms, setRooms] = useState<Room[]>([]);
+  const [rooms, setRooms] = useState<Room[]>([])
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -44,7 +44,8 @@ export const RoomList: FC<RoomListProps> = ({ display }) => {
           const mins = Math.max(0, Math.ceil((new Date(room.nextAvailable).getTime() - Date.now()) / 60000));
           const canBook = mins <= 60 && room.capacity >= 2;
           return (
-            <li key={room.id}>{room.name}
+            <li key={room.id}>
+              {room.name}
               {canBook ? <span>Can book</span> : <span>Cannot book</span>}
             </li>
           );
