@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --ext .ts,.tsx --max-warnings=0",
-    "format": "prettier -w .",
+    "lint": "eslint .",
+    "format": "prettier --write .",
     "preview": "vite preview",
     "prepare": "husky",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --reporter=dot"
   },
   "dependencies": {
     "react": "^19.1.1",
@@ -21,14 +23,20 @@
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
-    "eslint": "^9.35.0",
+    "eslint": "^9.38.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
     "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.6.2",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": ["eslint --fix", "prettier --write"],
+    "*.{json,md,css,scss}": ["prettier --write"]
   }
 }
