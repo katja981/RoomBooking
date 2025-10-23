@@ -7,9 +7,10 @@ export interface RoomListProps {
 }
 
 export const RoomList: FC<RoomListProps> = ({ display }) => {
-  const [rooms, setRooms] = useState<Room[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
+  const        [rooms, setRooms] = useState<Room[]>([]);
+                const [loading, setLoading] = useState<boolean>(false);
+     const [error, setError] = useState<string | null>(null);
+        const imNotUsed: any = null
 
   console.log(display);
 
