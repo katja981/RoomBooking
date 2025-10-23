@@ -10,7 +10,6 @@ export const RoomList: FC<RoomListProps> = ({ display }) => {
   const [rooms, setRooms] = useState<Room[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const testNumber = 42;
 
   console.log(display);
 
