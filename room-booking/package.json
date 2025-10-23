@@ -8,11 +8,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --reporter=dot",
     "preview": "vite preview",
     "prepare": "husky",
-    "postinstall": "husky install",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest run --reporter=dot"
+    "postinstall": "husky install"
   },
   "dependencies": {
     "react": "^19.1.1",
